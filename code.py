@@ -90,7 +90,10 @@ def process(path,down):
                     n+=1
                 elif x[j].startswith("Father's Name") or x[j].startswith("Husband's Name") or x[j].startswith("Mother's Name"):
                     a = x[j]
-                    b = x[j+1]
+                    try:
+                        b = x[j+1]
+                    except IndexError:
+                        b = ''
                     FName.append(a+' '+b)
                     f+=1
                 else:
